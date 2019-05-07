@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  
-
   root 'chatroom#index'
   get 'login', to: 'sessions#new'
   post 'login', to: 'sessions#create'
@@ -8,4 +6,5 @@ Rails.application.routes.draw do
   post 'message', to: 'messages#create'
   
   resources :users
+  mount ActionCable.server, at:'/cable'
 end

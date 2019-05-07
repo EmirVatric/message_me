@@ -4,6 +4,11 @@
     z-index: 200;
 }
 
+#messages {
+    overflow: auto;
+    height: 15em;
+}
+
 .chatbox {
     height: 450px;
 }

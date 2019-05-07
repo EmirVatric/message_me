@@ -17,9 +17,23 @@
 //= require semantic-ui
 //= require_tree .
 
+scroll_bottom = () => {
+    if ($('#messages').length > 0) {
+        $('#messages').scrollTop($('#messages')[0].scrollHeight)
+    }
+}
+
+clear_form = () => {
+    message = document.getElementById('message_body');
+    message.value = '';
+}
+
 $(document).on('turbolinks:load', function () {
     $('.ui.dropdown')
         .dropdown();
+
+    scroll_bottom()
+    clear_form()
 });
 
 $(document).on('turbolinks:load', function () {
@@ -28,15 +42,15 @@ $(document).on('turbolinks:load', function () {
     const signInButton = document.getElementById('signIn');
     const container = document.getElementById('containera');
 
-    console.log(container.classList);
+
 
     signUpButton.addEventListener('click', () => {
         container.classList.add("right-panel-active");
-        console.log(container.classList);
+
     });
 
     signInButton.addEventListener('click', () => {
         container.classList.remove("right-panel-active");
-        console.log(container.classList);
+
     });
 });
